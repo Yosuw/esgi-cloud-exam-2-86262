@@ -1,8 +1,9 @@
-const { Sequelize } = require('sequelize')
+const { Sequelize } = require('sequelize');
+require('dotenv').config();
 
 // database
 const sequelize = new Sequelize(
-  process.env.DATABASE_URL || 'postgres://fakeurl', // Utilisation de la variable d'environnement
+  process.env.DATABASE_URL, 
   {
     dialectOptions: {
       ssl: {
